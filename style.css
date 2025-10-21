@@ -1,0 +1,25 @@
+:root{
+  --bg:#111;
+  --panel:#1b1b1b;
+  --accent:#2a9df4;
+  --text:#eee;
+}
+
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:linear-gradient(90deg,#0f0f0f, #121212);border-bottom:1px solid rgba(255,255,255,0.03)}
+header h1{margin:0;font-size:1.05rem}
+.header-actions button{margin-left:8px}
+main{display:flex;height:calc(100% - 96px)}
+#sidebar{width:320px;padding:12px;background:var(--panel);overflow:auto;border-right:1px solid rgba(255,255,255,0.03)}
+#viewport{flex:1;position:relative}
+#c{width:100%;height:100%;display:block}
+section{margin-bottom:16px}
+section h2{margin:8px 0;font-size:0.95rem}
+button,input,select{display:block;width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:#0b0b0b;color:var(--text)}
+input[type="color"]{height:40px;padding:2px}
+#object-list{list-style:none;padding:0;margin:0}
+#object-list li{padding:6px 8px;border-radius:6px;margin:6px 0;background:rgba(255,255,255,0.02);cursor:pointer}
+#object-list li.selected{outline:2px solid var(--accent)}
+#selection-info{min-height:24px;padding:6px;background:#0a0a0a;border-radius:6px}
+footer{padding:8px 12px;text-align:right;border-top:1px solid rgba(255,255,255,0.03);font-size:0.85rem;background:linear-gradient(90deg,#0b0b0b,#0f0f0f)}
