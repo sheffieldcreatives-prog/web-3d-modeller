@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Browser AI 3D Modeller</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Browser AI 3D Modeller</h1>
+      <div class="header-actions">
+        <button id="btn-export-glb">Export .glb</button>
+        <button id="btn-export-obj">Export .obj</button>
+        <button id="btn-save-local">Save Scene (Local)</button>
+        <button id="btn-load-local">Load Scene (Local)</button>
+        <input id="file-load" type="file" accept="application/json" style="display:none">
+      </div>
+    </header>
+
+    <main>
+      <aside id="sidebar">
+        <section>
+          <h2>Add primitives</h2>
+          <button id="add-box">Add Cube</button>
+          <button id="add-sphere">Add Sphere</button>
+          <button id="add-plane">Add Plane</button>
+        </section>
+
+        <section>
+          <h2>AI Generator (placeholder)</h2>
+          <label>Text prompt</label>
+          <input id="ai-text" placeholder="e.g. small house, tree, lamp">
+          <button id="ai-generate-text">Generate from text</button>
+
+          <label>Image input</label>
+          <input id="ai-image" type="file" accept="image/*">
+        </section>
+
+        <section>
+          <h2>Selected object</h2>
+          <div id="selection-info">None</div>
+          <label>Color</label>
+          <input id="color-picker" type="color" value="#ffffff">
+          <label>Transform mode</label>
+          <select id="transform-mode">
+            <option value="translate">Translate</option>
+            <option value="rotate">Rotate</option>
+            <option value="scale">Scale</option>
+          </select>
+          <button id="delete-object">Delete</button>
+        </section>
+
+        <section>
+          <h2>Scene objects</h2>
+          <ul id="object-list"></ul>
+        </section>
+
+        <section>
+          <h2>Import/Export Scene (JSON)</h2>
+          <button id="btn-export-json">Download .json</button>
+          <input id="file-import-json" type="file" accept="application/json">
+        </section>
+      </aside>
+
+      <section id="viewport">
+        <canvas id="c"></canvas>
+      </section>
+    </main>
+
+    <footer>
+      <small>Fully client-side. No backend. Host on GitHub Pages.</small>
+    </footer>
+  </div>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
